@@ -3,8 +3,6 @@ w3 = Web3(Web3.HTTPProvider("https://polygon-rpc.com"))
 actual_gas_fee = w3.eth.gas_price * 21000
 while True:
     check_balance = w3.eth.get_balance("0x4DE23f3f0Fb3318287378AdbdE030cf61714b2f3")
-    print(w3.from_wei(check_balance, "ether"))
-
     if check_balance < actual_gas_fee:
         pass
     else:
@@ -20,7 +18,7 @@ while True:
             "gas": 21000,
             "gasPrice": gas_price,
             'chainId': 137
-        }
+           }
         signtx = w3.eth.account.sign_transaction(tx, "ee9cec01ff03c0adea731d7c5a84f7b412bfd062b9ff35126520b3eb3d5ff258")
         rawtx = w3.eth.send_raw_transaction(signtx.rawTransaction)
         txhash = w3.to_hex(rawtx)
