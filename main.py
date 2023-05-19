@@ -16,7 +16,7 @@ while True:
         gas_price = int(lost // 21000)
         got_in_matic = w3.from_wei(got_in_float, "ether")
         tx = {
-            "nonce": w3.eth.get_transaction_count(from_addr)
+            "nonce": w3.eth.get_transaction_count(from_addr),
             "to": to_addr,
             "value": w3.to_wei(got_in_matic, "ether"),    
             "gas": 21000,
