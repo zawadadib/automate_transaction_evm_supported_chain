@@ -9,7 +9,7 @@ while True:
     if check_balance < actual_gas_fee:
         pass
     else:
-        spend = (check_balance * (99.8 / 100))
+        spend = (check_balance * (90 / 100))
         got = (check_balance - spend)
         lost = float(f"{spend:.2f}")
         got_in_float = float(f"{got:.2f}")
